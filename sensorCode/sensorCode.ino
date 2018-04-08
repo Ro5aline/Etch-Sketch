@@ -15,7 +15,8 @@ void setup(){
 	Serial.begin(115200);	
 	pinMode(SENSORPINA, INPUT)
 	pinMode(SENSORPINB, INPUT)
-	attachInterrupt
+//attachInterrupt(buttonPin,ButtonPressed,RISING)
+	
 }
 void loop(){
 //interupt reset
@@ -27,16 +28,13 @@ void loop(){
 //Etching
 	if(millis()>=targetTime){
 		targetTime= millis()+interval;
-		Serial.println(analogRead(SENSORPINA));
-		Serial.println(analogRead(SENSORPINB));
 		//convert values into a string
-		Xaxis = String()
+		String x = String(analogRead(SENSORPINA));
+		String y = String(analogRead(SENSORPINB));
 		//combine into a string
-		String data = x	
-		//TODO: send the string over serial
-
-
+		String cord = x + "," + y + ",";
+		//Send the string over serial
 	}
 // Reset
-if ()
+void ButtonPressed
 }
