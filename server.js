@@ -20,7 +20,7 @@ http.listen(serverPort, function() {
 
 //---------------------- SERIAL COMMUNICATION --------------------------------//
 // start the serial port connection and read on newlines
-const serial = new serialPort('/dev/ttyUSB0', {
+const serial = new serialPort('/dev/ttyACM0', {
  baudRate:115200
 
 });
