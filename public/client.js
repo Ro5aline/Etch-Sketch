@@ -8,10 +8,17 @@ var firstMessage=true;    // first value
     ctx.container = document.getElementById( 'container' ); //reference drawing canvas
     ctx.autoclear= false; // making sure it stays
     ctx.retina='auto';
-    ctx.setup = function() { console.log( 'setup' );} // Setup all variables
-    ctx.keydown= function() { if ( ctx.keys.C ) ctx.clear();} // handeling keydowns
+    ctx.setup = function() 
+    { 
+      console.log( 'setup' );
+    } // Setup all variables
+    ctx.keydown= function() 
+    {
+    if ( ctx.keys.C ) ctx.clear();
+    } // handeling keydowns
 // on a 'reset' message clean and reste firstMessage
-    socket.on('reset', function() { 
+    socket.on('reset', function() 
+    { 
       firstMessage=true;
       ctx.clear();
     });
@@ -27,7 +34,9 @@ var firstMessage=true;    // first value
       if(firstMessage){ // if its the first message store that value as previous
         firstMessage=false;
         previousPosition=p;
-      }else{ // any other message we use to draw.
+      }
+      else
+      { // any other message we use to draw.
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.fillStyle = ctx.strokeStyle = COLOUR;
