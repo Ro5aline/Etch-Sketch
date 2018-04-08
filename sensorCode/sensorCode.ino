@@ -1,31 +1,42 @@
 //A0 ACC A1 POT
-#define SENSORPINA A0 // x axis
-#define SENSORPINB A1 // y axis
-
-const int Pins = 2;
-int button
+// x knob
+#define SENSORPINA A0 
+// y knob
+#define SENSORPINB A1 
+//Reset Button
+const int buttonPin = 3;
+//time
 unsigned long targetTime=0;
-const unsigned long interval=2500; 
+const unsigned long interval=250;
+//push button
+int buttonState = 0;
+// serial connection with a baudrate of 115200
 void setup(){
-// TODO: begin the serial connection with a baudrate of 115200
-Serial.begin(115200);
-	pinMode()
+	Serial.begin(115200);	
+	pinMode(SENSORPINA, INPUT)
+	pinMode(SENSORPINB, INPUT)
+	attachInterrupt
 }
 void loop(){
+//interupt reset
+	buttonState = digitalRead(buttonPin);
+	if(buttonState == HIGH)
+//rest
+		
+	else
+//Etching
 	if(millis()>=targetTime){
 		targetTime= millis()+interval;
 		Serial.println(analogRead(SENSORPINA));
-
-//TODO: Add other sensor read outs
-		
-     //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
-	
-		 //TODO: combine them into a string that can be understood by server.js
-		 //TODO: send the string over serial
+		Serial.println(analogRead(SENSORPINB));
+		//convert values into a string
+		Xaxis = String()
+		//combine into a string
+		String data = x	
+		//TODO: send the string over serial
 
 
 	}
-	// TODO: Detect if you want to reset the screen(shake the etch-a-sketch)
-  // TODO: write the reset message(see server.js) to the serial port
-
+// Reset
+if ()
 }
